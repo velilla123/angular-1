@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Angular Getting Started</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <app-root></app-root>
+    
+    <script src="https://kit.fontawesome.com/e24c3617f9.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#open').on('click', function(){
+            $('#popup').fadeIn('slow');
+            return false;
+        });
+    
+        $('#close').on('click', function(){
+          $('#popup').fadeOut('slow');
+          return false;
+        });
+
+        $('#close1').on('click', function(){
+          $(this).parent().fadeOut('slow');
+          return false;
+        });
+
+        /*********************/
+
+        $('#open2').on('click', function(){
+          $('#popup2').fadeIn('slow');
+          return false;
+        });
+
+        $('#clos').on('click', function(){
+          $('#popup2').fadeOut('slow');
+          return false;
+        });
+
+        $('#clos1').on('click', function(){
+          $('#popup2').fadeOut('slow');
+          return false;
+        });
+
+
+        /*******************/
+        var mediaquery = window.matchMedia("(max-width: 845px)");
+        if (mediaquery.matches) {
+          $('.cajaUno').css({"height": 'auto', 'overflow' : 'auto'});
+
+        } else {
+          $('.cajaUno').css({"height": + window.innerHeight - 20, 'overflow-y' : 'auto'});
+          
+        }
+
+        /*********************/
+
+        $('#ver-info').on('click', function(){
+          var element = document.getElementById("cajaUno");
+          var element1 = document.getElementById("ver-info");
+          element.classList.toggle("myStyle");
+          element1.classList.toggle("eyeT");
+
+        });
+
+        /*****************************/
+
+        var mediaquery2 = window.matchMedia("(max-width: 640px)");
+        if (mediaquery2.matches) {
+          $('.content-popup').css({"max-height": + window.innerHeight - 20, 'overflow-y' : 'auto'});
+
+        } else {
+          $('.content-popup').css({"height": 'auto'});
+        }
+
+      });
+    </script>
+  </body>
+</html>
