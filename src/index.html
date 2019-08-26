@@ -17,6 +17,8 @@
     
     <script src="https://kit.fontawesome.com/e24c3617f9.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
     <script>
       $(document).ready(function(){
         $('#open').on('click', function(){
@@ -81,6 +83,26 @@
         } else {
           $('.content-popup').css({"height": 'auto'});
         }
+
+        /*************************/
+        
+        var percent = 0;
+ 
+        timerId = setInterval(function() {
+            //incremento progress bar
+            percent += 5;
+            percent = Math.round(1*100/36);
+            $('.progress-bar').css('width', percent+'%');
+            $('.progress-bar').attr('aria-valuenow', percent);
+            $('.progress-bar').text(percent+'%');
+    
+            //completo
+            if (percent == 100) {
+                clearInterval(timerId);
+                $('.information').show();
+            }
+    
+        }, 1000);
 
       });
     </script>

@@ -314,6 +314,26 @@ body {
   font-size: 14px;
 }
 
+.progress{
+  background: rgba(97, 97, 97, 0.22);
+  border-radius: 20px;
+}
+
+.progress-bar{
+  background: #7ecc89;
+  color: white;
+  border-radius: 20px;
+  padding: 7px 15px;
+}
+
+.alert-info{
+  font-size: 13px;
+  padding-left: 5px;
+  margin-top: 5px;
+}
+
+/*********responsive********/
+
 @media(max-width: 1274px){
   .cajaUno{
     width: 280px;
@@ -390,6 +410,19 @@ body {
     padding-right: 20px;
     font-size: 15px;
   }
+
+  .estado-no span, .estado-si span, .estado-er span{
+    font-size: 13px;
+  }
+
+  .estado-no span i, .estado-si span i, .estado-er span i{
+    margin:0;
+  }
+
+  .estado-no p, .estado-si p, .estado-er p{
+    font-size: 15px;
+  }
+
 }
 
 @media(max-width: 375px){
